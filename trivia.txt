@@ -1,0 +1,70 @@
+What is the name of the baseball team in Colorado?
+Rockies
+Apples
+Broncos
+Indians
+1
+5
+What is the name of the baseball team in San Fransico?
+Cubs
+Apples
+Warriors
+Giants
+4
+5
+What is the name of the football team in Pittsburgh?
+Penguins
+Saints
+Steelers
+Bobcats
+3
+5
+What is the name of the basketball team in Tennessee?
+Tigers
+Titans
+Grizzles
+Jazz
+3
+5
+What is the name of the soccer team in Columbus?
+Express
+Capitals
+Crew
+Lions
+3
+5
+What is the name of the basketball team in Cleveland?
+Cavaliers
+Spiders
+Indians
+Bengals
+1
+5
+What is the name of the hockey team in Florida?
+Marlins
+Panthers
+Buccaners
+Heat
+2
+5
+What is the name of the hockey team in Columbus?
+White Sox
+Capitals
+Blue Jackets
+Stingers
+3
+5
+What is the name of the football team in Indianapolis?
+Colts
+Cowboys
+Broncos
+Blues
+1
+5
+What is the name of the basketball team in Arizona?
+Suns
+Hawks
+Ravens
+Cardinals
+4
+5
