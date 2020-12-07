@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.io.*;
 
 class Game implements ActionListener {
-  //Declaring Variables necessary
+  //Declaring Variables necessary for welcome, questions, scores, buttons for next scores and panels
   JLabel lblWelcome, lblEnterName;
   JTextField field1;
   JLabel lblQuestion;
@@ -16,7 +16,7 @@ class Game implements ActionListener {
   JPanel pnl1, pnl2, pnl3, pnl4, pnl5, pnl6;
   JPanel pnlQuestions, pnlMaster, pnlControl;
   
-  //Derclaring Variables necessary cont.
+  //Derclaring Variables necessary for the array
   ArrayList<Question> QuestList;
   ArrayList<JButton> AnswerList;
   int index;
@@ -30,7 +30,7 @@ class Game implements ActionListener {
     pName = "";
     index = 0;
     score = 0;
-    
+    //question and answer arrays
     AnswerList =  new ArrayList<JButton>();
     QuestList = new ArrayList<Question>();
    
@@ -101,8 +101,9 @@ class Game implements ActionListener {
     AnswerList.add(new JButton(QuestList.get(index).getOptionD()));
 
     //Show Current Score
-    lblScore = new JLabel("Current Score: " + score);
-
+    lblScore = new JLabel("Current Score: " + score,JLabel.CENTER);
+    lblScore.setForeground(Color.red);
+    
     //Buttons for Next Question, Restart, and Submit Score
     btnNextQuestion = new JButton("Next Question");
     btnNextQuestion.addActionListener(this);
@@ -118,7 +119,7 @@ class Game implements ActionListener {
     pnl5 = new JPanel(new FlowLayout());
     pnl6 = new JPanel(new FlowLayout());
     pnlMaster = new JPanel(new FlowLayout());
-
+    //layout for title panel & questions
     pnl1.add(lblWelcome);
     pnl2.add(lblPrompt);
     pnl2.add(lblEnterName);
@@ -129,6 +130,7 @@ class Game implements ActionListener {
         AnswerList.get(i).addActionListener(this);
         pnl4.add(AnswerList.get(i));
       }
+    //layout for questions and buttons
     pnl5.add(lblPrompt);
     pnl5.add(lblScore);
     pnl6.add(btnNextQuestion);
@@ -136,7 +138,7 @@ class Game implements ActionListener {
     btnSubmit.setVisible(false);
     btnSubmit.addActionListener(this);
     pnl6.add(btnRestart);
-
+    //adds new panels
     pnlMaster.add(pnl1);
     pnlMaster.add(pnl2);
     pnlMaster.add(pnl3);
@@ -152,13 +154,14 @@ class Game implements ActionListener {
 
   //Method for going to the Next Question
   void nextQuest(){
+    //goes to next question if game is still going on
     if (index < 9){
       index = index + 1;
       System.out.println(index);
     }
     else{
       lblPrompt.setText("Thanks " + pName + " the Game is Over!");
-     
+     //makes panels invisible when game is done
       pnl1.setVisible(false);
       pnl2.setVisible(false);
       pnl3.setVisible(false);
@@ -169,6 +172,7 @@ class Game implements ActionListener {
       btnSubmit.setVisible(true);
 
     }
+    //sets up gui with answers, points, and worth slots
     lblQuestion.setText(QuestList.get(index).getQuestText()+ " (Worth " + QuestList.get(index).getPoints() +" Points)");
     AnswerList.get(0).setText(QuestList.get(index).getOptionA());
     AnswerList.get(1).setText(QuestList.get(index).getOptionB());
@@ -196,7 +200,7 @@ class Game implements ActionListener {
      }
 
   }
-
+  //awarding points
 
   public void actionPerformed(ActionEvent ae){
     String correctAns = AnswerList.get(QuestList.get(index).getCorrectAns()-1).getText();
@@ -244,7 +248,7 @@ class Game implements ActionListener {
     btnEnterName.setVisible(false);
     }
     //Action if the user Submits their Score
-    else if(ae.getActionCommand().equals("Submit Score")){
+   else if(ae.getActionCommand().equals("Submit Score")){
       record();
     }
     //The Action taken if the Answer Selected was Incorrect

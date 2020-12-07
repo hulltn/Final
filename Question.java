@@ -32,7 +32,7 @@ class Question {
 
   }
 
-  //Accessors
+  //Accessors for questions, 4 answers options, the correct answer, and awarding points
 
   String getQuestText(){
     return questText;
