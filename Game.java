@@ -80,9 +80,13 @@ class Game implements ActionListener {
     
     //Welcome Label Text
     lblWelcome = new JLabel("Welcome to the Team Naming Game!");
+    //Sets welcome label to blue
+    lblWelcome.setForeground(Color.blue);
     //Name Collection
     lblEnterName = new JLabel("Enter your Name:  ");
     btnEnterName = new JButton("Enter");
+    //Makes Enter button have blue text
+    btnEnterName.setForeground(Color.blue);
     btnEnterName.addActionListener(this);
     field1 = new JTextField(10);
     field1.setActionCommand("myTF");
@@ -102,12 +106,17 @@ class Game implements ActionListener {
 
     //Show Current Score
     lblScore = new JLabel("Current Score: " + score,JLabel.CENTER);
+    //Current score shows as red
     lblScore.setForeground(Color.red);
     
     //Buttons for Next Question, Restart, and Submit Score
     btnNextQuestion = new JButton("Next Question");
+    //Makes next question blue
+    btnNextQuestion.setForeground(Color.blue);
     btnNextQuestion.addActionListener(this);
     btnRestart = new JButton("Restart");
+    //Makes restart button red
+    btnRestart.setForeground(Color.red);
     btnRestart.addActionListener(this);
     btnSubmit = new JButton("Submit Score");
     btnSubmit.addActionListener(this);
@@ -122,13 +131,19 @@ class Game implements ActionListener {
     //layout for title panel & questions
     pnl1.add(lblWelcome);
     pnl2.add(lblPrompt);
+    //Makes enter your name background yellow
     pnl2.add(lblEnterName);
+    pnl2.setBackground(Color.yellow);
     pnl2.add(field1);
     pnl2.add(btnEnterName);
     pnl3.add(lblQuestion);
+    //Makes question background orange
+    pnl3.setBackground(Color.orange);
       for (int i = 0; i < 4; i++){
         AnswerList.get(i).addActionListener(this);
         pnl4.add(AnswerList.get(i));
+        //Makes the questions background green
+        pnl4.setBackground(Color.green);
       }
     //layout for questions and buttons
     pnl5.add(lblPrompt);
